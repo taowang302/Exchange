@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 from  binascii import *
 import sys
-import  passwordlist
+#import  passwordlist
 
 if len(sys.argv) != 3 or sys.argv[1] not in ('0','1'):
     sys.exit(
@@ -37,6 +37,19 @@ def b2a(src_str):
                exc_str += str(i)+str(pwlist[i].index(s))
     return(b2a_hex(exc_str))
 
-pwlist = passwordlist.pwlist
+#pwlist = passwordlist.pwlist
+
+pwlist=[['!','@','#','$','%','^','&','*','(',')','_','+'],
+['1','2','3','4','5','6','7','8','9','0','-','='],
+['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']'],
+['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'"],
+['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'],
+['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '{', '}', '|'],
+['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ':', '"'],
+['Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?']]
+
+
+
+
 arg_list=[b2a,a2b]
 print('{} => {}'.format(sys.argv[2],arg_list[int(sys.argv[1])](sys.argv[2])))
